@@ -1,0 +1,23 @@
+{
+    "name": "nextjs-tutorial",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile",
+        "target": "vscode"
+    },
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-typescript-next",
+                "msjsdiag.vscode-react-native",
+                "GitHub.copilot"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder}/,target=/workspace,type=bind"
+    ],
+    "remoteUser": "root",
+    "postCreateCommand": "/bin/bash .devcontainer/post_create.sh"
+}
